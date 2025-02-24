@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const { Schema } = require('mongoose');
-const { modelName } = require('./Notes');
+const { modelName } = require('./Note');
 
 const UserSchema = new Schema({
   name: {
@@ -12,9 +12,10 @@ const UserSchema = new Schema({
     require: true,
     uniqe: true
   },
-  pasword: {
+  password: {
     type: String,
-    require: true
+    require: true,
+    selected: true
   },
 })
 

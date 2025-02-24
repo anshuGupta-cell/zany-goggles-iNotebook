@@ -1,14 +1,15 @@
 const connectToMongo = require('./db')
 const express = require('express')
+const cors = require('cors')
 
 
 connectToMongo();
 
 const app = express()
+app.use(cors())
 const port = 5400
 
 app.use(express.json())
-
 app.use(express.urlencoded({ extended: true })); // Middleware for form data
 
 app.use('/api/auth', require('./routes/auth'))
@@ -21,4 +22,6 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
+
+
 

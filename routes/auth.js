@@ -111,6 +111,7 @@ router.post(
 // get user data
 
 router.post('/getuser', fetchuser, async (req, res)=>{
+  let success = false
   try {
     const userId = req.id
     console.log("req.id->", req.id);
@@ -118,12 +119,12 @@ router.post('/getuser', fetchuser, async (req, res)=>{
     
     const user = await User.findById(userId).select("-password")
     console.log("user -> ", user);
-    
-    res.send(user)
+    success = true;
+    res.json({success, user})
     
   } catch (err) {
     
-    res.status(500).json({error: 'Server error'})
+    res.status(500).json({success: false, error: 'Server error'})
   }
 
 })

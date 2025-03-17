@@ -111,7 +111,7 @@ router.post(
 // get user data
 
 router.post('/getuser', fetchuser, async (req, res)=>{
-  let success = false
+  let success
   try {
     const userId = req.id
     console.log("req.id->", req.id);
@@ -123,8 +123,8 @@ router.post('/getuser', fetchuser, async (req, res)=>{
     res.json({success, user})
     
   } catch (err) {
-    
-    res.status(500).json({success: false, error: 'Server error'})
+    success = false
+    res.status(500).json({success, error: 'Server error'})
   }
 
 })

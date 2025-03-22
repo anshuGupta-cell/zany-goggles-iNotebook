@@ -20,7 +20,7 @@ const fetchuser = (req, res, next) => {
   } catch (err) {
 
     console.log("errr", err);
-    res.status(401).json({error: "enter valid token"})
+    res.status(401).json({success: false, error: "enter valid token"})
 
   }
   

@@ -124,7 +124,7 @@ router.post('/getuser', fetchuser, async (req, res)=>{
     
   } catch (err) {
     success = false
-    res.status(500).json({success, error: 'Server error'})
+    res.status(500).json({ error: 'Server error'})
   }
 
 })

@@ -3,9 +3,9 @@ const dotenv = require("dotenv")
 dotenv.config()
 
 //const URI = 'http://localhost:7000'
-const URI = process.env.MONGO_URI
+// const//const/con = process.env.MO
 // const URI = "mongodb+srv://vivekgutt2004:2VJpxdAnkiGuMlJk@mongoyoutube.k2gyp.mongodb.net/?retryWrites=true&w=majority&appName=MongoYoutube";
-// const URI = "mongodb+srv://vivekgutt2004:<db_password>@mongoyoutube.k2gyp.mongodb.net/"
+const URI = "mongodb+srv://vivekgutt2004:<db_password>@mongoyoutube.k2gyp.mongodb.net/"
 
 const connectToMongo = async () => {
   try {
